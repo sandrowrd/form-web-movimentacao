@@ -20,6 +20,16 @@
     <div id="root"></div>
     <script src="./static/js/iframeResizer.contentWindow.min.js"></script>
     <script>
+      this.workflowCockpit = workflowCockpit({
+        init: _loadData,
+      });
+
+      function _loadData(data, info) {
+        console.log(data);
+        console.log(info);
+      }
+    </script>
+    <script>
       !(function (e) {
         function r(r) {
           for (
