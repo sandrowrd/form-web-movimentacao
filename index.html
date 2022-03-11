@@ -21,7 +21,8 @@
     <script src="./static/js/iframeResizer.contentWindow.min.js"></script>
     <script>
       console.log("Isto é teste");
-      const UserSenior = Window.localStorage.SENIOR_USER_INFO;
+      const UserSenior = Window.localStorage.getItem("SENIOR_USER_INFO");
+      //const UserSenio = Storage.getItem();
       console.log(JSON.stringify(UserSenior));
       console.log(JSON.parse(UserSenior));
     </script>
