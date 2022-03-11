@@ -19,6 +19,7 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script src="./static/js/iframeResizer.contentWindow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.js"></script>
     <script
       type="text/javascript"
       src="https://cdn.senior.com.br/platform/1.7.1/js/workflow-cockpit.min.js"
@@ -29,8 +30,14 @@
       });
 
       function _loadData(data, info) {
-        console.log(data);
-        console.log(info);
+        const { initialVariables } = data.loadContext;
+        console.log(initialVariables);
+        info.getUserData().then(function () {
+          info.getPlatformData().then(function (platformData) {
+            // Informações da G7
+            console.log(platformData);
+          });
+        });
       }
     </script>
     <script>
